@@ -1,0 +1,81 @@
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 14e7d90..20f2a97 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -12,6 +12,9 @@[m
+         "next": "^13.1.6",[m
+         "react": "^18.2.0",[m
+         "react-dom": "^18.2.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "devDependencies": {[m
+[32m+[m[32m        "prettier": "^3.2.4"[m
+       }[m
+     },[m
+     "node_modules/@next/env": {[m
+[36m@@ -358,6 +361,21 @@[m
+         "node": "^10 || ^12 || >=14"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/prettier": {[m
+[32m+[m[32m      "version": "3.2.4",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.2.4.tgz",[m
+[32m+[m[32m      "integrity": "sha512-FWu1oLHKCrtpO1ypU6J0SbK2d9Ckwysq6bHj/uaCP26DxrPpppCLQRGVuqAxSTvhF00AcvDRyYrLNW7ocBhFFQ==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "bin": {[m
+[32m+[m[32m        "prettier": "bin/prettier.cjs"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=14"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "funding": {[m
+[32m+[m[32m        "url": "https://github.com/prettier/prettier?sponsor=1"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/react": {[m
+       "version": "18.2.0",[m
+       "resolved": "https://registry.npmjs.org/react/-/react-18.2.0.tgz",[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 6c4a26e..f0493cb 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -4,7 +4,9 @@[m
+   "description": "Um projeto de alguém que está aprendendo a programar, aceitando dicas e instruções.",[m
+   "main": "index.js",[m
+   "scripts": {[m
+[31m-   "dev" : "next dev"[m
+[32m+[m[32m    "dev": "next dev",[m
+[32m+[m[32m    "lint:check": "prettier --check .",[m
+[32m+[m[32m    "lint:fix": "prettier --write ."[m
+   },[m
+   "author": "",[m
+   "license": "MIT",[m
+[36m@@ -12,5 +14,8 @@[m
+     "next": "^13.1.6",[m
+     "react": "^18.2.0",[m
+     "react-dom": "^18.2.0"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "devDependencies": {[m
+[32m+[m[32m    "prettier": "^3.2.4"[m
+   }[m
+[31m-}[m
+[41m+[m
+[1mdiff --git a/pages/index.js b/pages/index.js[m
+[1mindex aa29c43..077f7ba 100644[m
+[1m--- a/pages/index.js[m
+[1m+++ b/pages/index.js[m
+[36m@@ -1,7 +1,13 @@[m
+ function Home() {[m
+[31m-    return <h1>Oi mamãe, você é a melhor mãe do mundo! [m
+[31m-        Esse é meu primeiro espaço na internet, deu um trabalhão[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <h1>[m
+[32m+[m[32m      Oi mamãe, você é a melhor mãe do mundo! Esse é meu primeiro espaço na[m
+[32m+[m[32m      internet, deu um trabalhão[m
+     </h1>[m
+[32m+[m[32m  );[m
+ }[m
+ [m
+[32m+[m[32mfunction teste2() {[m
+[32m+[m[32m  return <button> Send</button>;[m
+[32m+[m[32m}[m
+ export default Home;[m
