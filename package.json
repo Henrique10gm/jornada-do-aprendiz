@@ -8,6 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint:check": "prettier --check .",
     "lint:fix": "lint --write ."
   },
